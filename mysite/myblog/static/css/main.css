@@ -1,0 +1,15 @@
+body {background-color: #ddebeb;color:#232323;font-family: 'Karla', sans-serif;font-weight:  900px;font-weight: bolder;}
+h1,h2,h3,h4,h5,h6 {font-family:'Rowdies', cursive;}
+
+.date {color:#74aaad}
+img.card-img-top{max-height:  195px;}
+
+.card-text {
+    font-size: 0.9em;
+    min-height:  9em;
+}
+
+
+/*font-family: 'Karla', sans-serif;
+font-family: 'Rowdies', cursive;*/
+

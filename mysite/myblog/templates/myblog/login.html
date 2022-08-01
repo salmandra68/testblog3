@@ -1,0 +1,28 @@
+{% extends 'myblog/layout.html' %}
+{% block content %}
+
+        <form action="{% url 'myblog:user_login' %}" method="POST">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+                    <div class="form-group">
+                        <label for="username">Entrez votre pseudo:</label>
+                        <input type="text" name="username" placeholder="Pseudo" class="form-control" id="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Entrez votre Mot de passe:</label>
+                        <input type="password" name="password" placeholder="Mot de passe" class="form-control" id="password">
+                    </div>
+
+
+                    <div class="form-group"></div>
+                        <input type="submit" value="valider" class="btn btn-primary">
+                    </div>
+            
+        </form>
+{% endblock %}
+
+
+
+    

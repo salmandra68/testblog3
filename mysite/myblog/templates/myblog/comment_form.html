@@ -1,0 +1,15 @@
+{% extends 'myblog/layout.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Ajouter un commentaire</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class ="btn btn-info">Poster un commentaire</button>
+    </form>
+
+</div>
+
+{% endblock %}

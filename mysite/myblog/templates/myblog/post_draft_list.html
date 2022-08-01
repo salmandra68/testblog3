@@ -1,0 +1,14 @@
+{% extends 'myblog/layout.html' %}
+
+
+{% block content %}
+    <div class="container">
+
+        <p>crée le : {{}}</p>
+        <h1><a href="{% url 'myblog:post_detail' pk=post.pk %}">{{post.title}}</a></h1>
+
+        <p>{{post.text|safe}}</p>
+    {% endfor %}    
+    </div>
+
+{% endblock %}

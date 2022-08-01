@@ -1,0 +1,21 @@
+{% extends 'myblog/layout.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Voulez vous supprimer {{ post.title }} ?</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" class="btn bhtn-danger" value="Supprimer">
+        <a href ="{% url 'myblog:post_detail' pk=post.pk %}" class="btn btn-default">Annuler</a>
+    </form>
+
+
+</div>
+
+
+
+{% endblock %}

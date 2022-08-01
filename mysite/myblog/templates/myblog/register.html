@@ -1,0 +1,23 @@
+{% extends 'myblog/layout.html' %}
+
+{% block content %}
+
+
+    {% if registered %}
+        <h1>Vous êtes dejà inscrit </h1>
+    {% else %}    
+
+
+
+        <h1>Inscrivez-vous !</h1>
+        <h2>Merci de compléter le formulaire</h2>
+
+        <form action="" method ="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+     
+            {{ register_form.as_p}}
+
+            <input type="submit" class="btn btn-info" value="Je m'inscris !">
+        </form> 
+    {% endif %}       
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'myblog/layout.html' %}
+
+
+{% block content %}
+<div class="container mt-3">
+        <h1>Liste d'articles</h1>
+        <div class="row">
+          {% for post in post_list %}
+            <div class="col-md-4 mt-3">
+              <div class="card" >
+                  {% if post.post_pic%}
+
+                  <img src="{{ post.post_pic.url }}" alt="" class="card-img-top">
+                  {% else %}
+                  <img src="https//loremflickr.com/338/190"  alt="" class="card-img-top">
+                  
+                  {% endif %}
+                  <div class="card-body">
+                    <h5 class="card-title">
+                    <a href ="{% url 'myblog:post_detail' pk=post.pk %}">{{post.title}}</a>
+                  </h5>
+                  <div class="row justify-content-between mx-1 mb-3">
+                      <div>
+                        <small class="auteur">Publié par {{ user.username }}</small>
+                      </div>
+                      <small class ="date"> Publié le {{ post.published_date|date:"d-m-Y" }}</small>
+                      <small class="date"> Commentaires:{{ post.approve_comments.count}}</small>
+                      
+                  </div>
+                  <p class="card-text">{{ post.text|truncatewords:30|safe}}</p>
+                  <a href ="{% url 'myblog:post_detail' pk=post.pk %}" class="btn btn-primary">Lire la suite</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}  
+        </div>
+
+</div>
+{% endblock %}
