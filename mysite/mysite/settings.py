@@ -135,8 +135,9 @@ STATICFILES_DIRS = [STATIC_DIR]
 LOGIN_REDIRECT_URL='/'
 
 MEDIA_DIR=os.path.join(BASE_DIR,'media')
-MEDIA_ROOT= MEDIA_DIR
+#MEDIA_ROOT= MEDIA_DIR
 MEDIA_URL='/media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 
 LOGIN_URL ='myblog/user_login'
@@ -154,17 +155,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+# blog/settings.py
+from pathlib import Path
+import environ
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = ['*']
-
-STATIC_ROOT = 'staticfiles'
-
-DEBUG = False
-
+env = environ.Env()
+environ.Env.read_env(env_file=str(BASE_DIR / "myblog" / ".env"))
 
 
 
