@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'myblog/templates'),
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = []
+SECRET_KEY = 'T_z6jI_LSnWavp5GMZLaRyU6dSsjIWCA6tWxXCpfzhY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -158,12 +158,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # blog/settings.py
 from pathlib import Path
 import environ
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-environ.Env.read_env(env_file=str(BASE_DIR / "myblog" / ".env"))
+environ.Env.read_env(env_file=str(BASE_DIR / "mysite" / ".env"))
 
 
 
