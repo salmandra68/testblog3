@@ -164,7 +164,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()
-environ.Env.read_env(env_file=str(BASE_DIR / "mysite" / ".env"))
+environ.Env.read_env(env_file=(BASE_DIR / "mysite" / ".env"))
 
 
 
